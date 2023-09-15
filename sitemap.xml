@@ -2,72 +2,137 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://nota-netspresso.github.io/netspresso-trainer/</loc>
-         <lastmod>2023-08-11</lastmod>
+         <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nota-netspresso.github.io/netspresso-trainer/docker-installation/</loc>
-         <lastmod>2023-08-11</lastmod>
+         <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nota-netspresso.github.io/netspresso-trainer/getting-started/</loc>
-         <lastmod>2023-08-11</lastmod>
+         <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nota-netspresso.github.io/netspresso-trainer/installation/</loc>
-         <lastmod>2023-08-11</lastmod>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/components/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/components/augmentation/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/components/data/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/components/logging/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/components/training/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/components/model/backbones/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/components/model/common/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/components/model/field/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/components/model/fulls/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/components/model/heads/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/components/model/losses/</loc>
+         <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nota-netspresso.github.io/netspresso-trainer/models/</loc>
-         <lastmod>2023-08-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://nota-netspresso.github.io/netspresso-trainer/models/compatibility/</loc>
-         <lastmod>2023-08-11</lastmod>
+         <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nota-netspresso.github.io/netspresso-trainer/models/implementations/</loc>
-         <lastmod>2023-08-11</lastmod>
+         <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nota-netspresso.github.io/netspresso-trainer/models/model-list/</loc>
-         <lastmod>2023-08-11</lastmod>
+         <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nota-netspresso.github.io/netspresso-trainer/models/model-list/backbones/</loc>
-         <lastmod>2023-08-11</lastmod>
+         <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nota-netspresso.github.io/netspresso-trainer/models/model-list/full-models/</loc>
-         <lastmod>2023-08-11</lastmod>
+         <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nota-netspresso.github.io/netspresso-trainer/models/model-list/heads/</loc>
-         <lastmod>2023-08-11</lastmod>
+         <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://nota-netspresso.github.io/netspresso-trainer/training/</loc>
-         <lastmod>2023-08-11</lastmod>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/pynetspresso/</loc>
+         <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://nota-netspresso.github.io/netspresso-trainer/training/huggingface-datasets/</loc>
-         <lastmod>2023-08-11</lastmod>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/pynetspresso/compressor/</loc>
+         <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://nota-netspresso.github.io/netspresso-trainer/training/tensorboard/</loc>
-         <lastmod>2023-08-11</lastmod>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/pynetspresso/launcher/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/pynetspresso/torch-fx/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/pynetspresso/best-practice/benchmark-with-launcher/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nota-netspresso.github.io/netspresso-trainer/pynetspresso/best-practice/compress-and-retrain/</loc>
+         <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -12,20 +12,20 @@
         <meta name="author" content="Nota">
       
       
-        <link rel="canonical" href="https://nota-netspresso.github.io/netspresso-trainer/models/implementations/">
+        <link rel="canonical" href="https://nota-netspresso.github.io/netspresso-trainer/components/data/">
       
       
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../model-list/">
+        <link rel="next" href="../augmentation/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>Implementations - Docs for NetsPresso Trainer</title>
+        <title>Data - Docs for NetsPresso Trainer</title>
       
     
     
@@ -90,6 +90,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -138,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Implementations
+              Data
             
           </span>
         </div>
@@ -270,22 +275,6 @@
         
   
   
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../components/" class="md-tabs__link">
-        Components
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
     
   
 
@@ -295,6 +284,22 @@
   
     <li class="md-tabs__item">
       <a href="../" class="md-tabs__link md-tabs__link--active">
+        Components
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../models/" class="md-tabs__link">
         Models
       </a>
     </li>
@@ -485,16 +490,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
         
@@ -517,7 +522,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../components/">Components</a>
+          <a href="../">Components</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -525,7 +530,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Components
@@ -538,11 +543,150 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../components/data/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Data
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supporting-format" class="md-nav__link">
+    Supporting format
+  </a>
+  
+    <nav class="md-nav" aria-label="Supporting format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-classification" class="md-nav__link">
+    Image classification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-segmentation" class="md-nav__link">
+    Semantic segmentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-detection" class="md-nav__link">
+    Object detection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-with-hugging-face-datasets" class="md-nav__link">
+    Training with Hugging Face datasets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-list" class="md-nav__link">
+    Field list
+  </a>
+  
+    <nav class="md-nav" aria-label="Field list">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-dataset" class="md-nav__link">
+    Local dataset
+  </a>
+  
+    <nav class="md-nav" aria-label="Local dataset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common" class="md-nav__link">
+    Common
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    Classification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segmentation" class="md-nav__link">
+    Segmentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection" class="md-nav__link">
+    Detection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hugging-face-datasets" class="md-nav__link">
+    Hugging Face datasets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -554,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/augmentation/" class="md-nav__link">
+      <a href="../augmentation/" class="md-nav__link">
         Augmentation
       </a>
     </li>
@@ -568,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/training/" class="md-nav__link">
+      <a href="../training/" class="md-nav__link">
         Training
       </a>
     </li>
@@ -625,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/model/common/" class="md-nav__link">
+      <a href="../model/common/" class="md-nav__link">
         Common
       </a>
     </li>
@@ -639,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/model/backbones/" class="md-nav__link">
+      <a href="../model/backbones/" class="md-nav__link">
         Backbones
       </a>
     </li>
@@ -653,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/model/heads/" class="md-nav__link">
+      <a href="../model/heads/" class="md-nav__link">
         Task heads
       </a>
     </li>
@@ -667,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/model/fulls/" class="md-nav__link">
+      <a href="../model/fulls/" class="md-nav__link">
         Full models
       </a>
     </li>
@@ -681,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/model/losses/" class="md-nav__link">
+      <a href="../model/losses/" class="md-nav__link">
         Losses
       </a>
     </li>
@@ -695,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/model/field/" class="md-nav__link">
+      <a href="../model/field/" class="md-nav__link">
         Field list
       </a>
     </li>
@@ -716,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/logging/" class="md-nav__link">
+      <a href="../logging/" class="md-nav__link">
         Logging
       </a>
     </li>
@@ -736,16 +880,16 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
         
@@ -762,7 +906,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Models</a>
+          <a href="../../models/">Models</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -770,7 +914,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Models
@@ -783,19 +927,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../models/implementations/" class="md-nav__link">
         Implementations
       </a>
-      
     </li>
   
 
@@ -833,7 +969,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../model-list/">Model List</a>
+          <a href="../../models/model-list/">Model List</a>
           
             <label for="__nav_4_3">
               <span class="md-nav__icon md-icon"></span>
@@ -856,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../model-list/backbones/" class="md-nav__link">
+      <a href="../../models/model-list/backbones/" class="md-nav__link">
         Backbones
       </a>
     </li>
@@ -870,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../model-list/heads/" class="md-nav__link">
+      <a href="../../models/model-list/heads/" class="md-nav__link">
         Heads
       </a>
     </li>
@@ -884,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../model-list/full-models/" class="md-nav__link">
+      <a href="../../models/model-list/full-models/" class="md-nav__link">
         Full models
       </a>
     </li>
@@ -1094,6 +1230,123 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supporting-format" class="md-nav__link">
+    Supporting format
+  </a>
+  
+    <nav class="md-nav" aria-label="Supporting format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-classification" class="md-nav__link">
+    Image classification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-segmentation" class="md-nav__link">
+    Semantic segmentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-detection" class="md-nav__link">
+    Object detection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-with-hugging-face-datasets" class="md-nav__link">
+    Training with Hugging Face datasets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-list" class="md-nav__link">
+    Field list
+  </a>
+  
+    <nav class="md-nav" aria-label="Field list">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-dataset" class="md-nav__link">
+    Local dataset
+  </a>
+  
+    <nav class="md-nav" aria-label="Local dataset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common" class="md-nav__link">
+    Common
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    Classification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segmentation" class="md-nav__link">
+    Segmentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection" class="md-nav__link">
+    Detection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hugging-face-datasets" class="md-nav__link">
+    Hugging Face datasets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1107,7 +1360,7 @@
                   
 
   
-    <a href="https://github.com/nota-netspresso/netspresso-trainer/edit/master/docs/models/implementations.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/nota-netspresso/netspresso-trainer/edit/master/docs/components/data.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1116,16 +1369,162 @@
     
       
     
-    <a href="https://github.com/nota-netspresso/netspresso-trainer/raw/master/docs/models/implementations.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/nota-netspresso/netspresso-trainer/raw/master/docs/components/data.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-  <h1>Implementations</h1>
+  <h1>Data</h1>
 
-<p><img alt="our-implementation" src="../assets/our-implementations.drawio.png" /></p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>NetsPresso Trainer supports learning functions for various vision tasks with your custom data. 
+In addition to data stored in a local repository, it also supports learning with data accessible through APIs such as <a href="https://huggingface.co/datasets">Hugging Face datasets</a>. 
+Currently, the dataset formats supported by NetsPresso Trainer are fixed in a specific form, but we plan to expand to more dataset formats such as COCO format in the future.  </p>
+<p>On this page, we will guide you on the data format you need to learn with your custom data and how to learn using Hugging Face datasets. </p>
+<h2 id="supporting-format">Supporting format<a class="headerlink" href="#supporting-format" title="Permanent link">&para;</a></h2>
+<p>For image data, various extension images are supported, but we recommend one of <code>.jpg</code>, <code>.jpeg</code>, <code>.png</code>, and <code>.bmp</code>. In this case, label data used in semantic segmentation must be saved as <code>.png</code> to prevent data loss and utilize image header information. 
+The following sections introduce how to organize data for each task. </p>
+<h3 id="image-classification">Image classification<a class="headerlink" href="#image-classification" title="Permanent link">&para;</a></h3>
+<p>To train an image classification model using NetsPresso Trainer, <strong>the data must be in following formats</strong>: </p>
+<ul>
+<li>There must be a directory for each class to be distinguished by the classification model.</li>
+<li>Each class directory must contain all the images corresponding to that class.</li>
+<li>Collect directories containing images for each class under the root directory.</li>
+<li>Users must know in advance which class name each class directory name corresponds to.</li>
+</ul>
+<p>The example data directory structure for this is as follows:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># TODO
+</span></code></pre></div>
+<p>An example yaml configuration for this is as follows:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">data</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">food_pic</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">classification</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"> </span><span class="c1"># local, huggingface</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">path</span><span class="p">:</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data/my_food_pics</span><span class="w"> </span><span class="c1"># dataset root</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">train</span><span class="p">:</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">train</span><span class="w"> </span><span class="c1"># directory for training images</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span><span class="w">  </span><span class="c1"># label for training images</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">valid</span><span class="p">:</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">val</span><span class="w">  </span><span class="c1"># directory for valid images</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span><span class="w">  </span><span class="c1"># label for valid images</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">test</span><span class="p">:</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span><span class="w">  </span><span class="c1"># directory for test images</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span><span class="w">  </span><span class="c1"># label for test images</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="nt">id_mapping</span><span class="p">:</span><span class="w">  </span><span class="c1"># Dict[directory_name, class_name]. If None, set the directory name same with class name</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nt">directory_1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curry</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="nt">directory_2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ramen</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nt">directory_3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rice</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="nt">directory_4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sushi</span>
+</span></code></pre></div>
+<h3 id="semantic-segmentation">Semantic segmentation<a class="headerlink" href="#semantic-segmentation" title="Permanent link">&para;</a></h3>
+<p>To train a semantic segmentation model using NetsPresso Trainer, <strong>the data must be in following formats</strong>: </p>
+<ul>
+<li>For each training image, there must be a label file (image) indicating the original image and the class index of each pixel of the image.</li>
+<li>Users must create an image and label directory under the root directory and put the corresponding files in each directory.</li>
+<li>In this case, training data and validation data can be distinguished in different directories. For example, training data can be placed in train/image, train/label directories, and validation data can be placed in valid/image, valid/label directories.</li>
+<li>Users must know the class name corresponding to each pixel value (RGB or L (grayscale) format) in the label file.</li>
+</ul>
+<p>The example data directory structure for this is as follows:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># TODO
+</span></code></pre></div>
+<p>An example yaml configuration for this is as follows:</p>
+<p><em>FIXME</em> <a href="https://github.com/Nota-NetsPresso/netspresso-trainer/issues/150">https://github.com/Nota-NetsPresso/netspresso-trainer/issues/150</a></p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
+</span></code></pre></div>
+<h3 id="object-detection">Object detection<a class="headerlink" href="#object-detection" title="Permanent link">&para;</a></h3>
+<p>To train an object detection model using NetsPresso Trainer, <strong>the data must be in following formats</strong>: </p>
+<ul>
+<li>For object model training, there must be a <code>.txt</code> file for each training image indicating the original image and the bounding box and class index corresponding to each bounding box of the image.</li>
+<li>The format of the bounding box follows the YOLO dataset format ([x_center, y_center, width, height], normalized).</li>
+<li>Each <code>.txt</code> file must contain one line for each bounding box.</li>
+<li>In this case, training data and validation data can be distinguished in different directories. For example, training data can be placed in train/image, train/label directories, and validation data can be placed in valid/image, valid/label directories.</li>
+<li>Users must know the class name corresponding to each class index in the label file.</li>
+</ul>
+<p>The example data directory structure for this is as follows: </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># TODO
+</span></code></pre></div>
+<p>An example yaml configuration for this is as follows: </p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># This example dataset is downloaded from &lt;https://www.kaggle.com/code/valentynsichkar/traffic-signs-detection-by-yolo-v3-opencv-keras/input&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">data</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traffic_sign_yolo</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">detection</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"> </span><span class="c1"># local, huggingface</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">path</span><span class="p">:</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../../data/traffic-sign</span><span class="w"> </span><span class="c1"># dataset root</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">train</span><span class="p">:</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">images/train</span><span class="w"> </span><span class="c1"># directory for training images</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">labels/train</span><span class="w"> </span><span class="c1"># directory for training labels</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="nt">valid</span><span class="p">:</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">images/val</span><span class="w">  </span><span class="c1"># directory for valid images</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">labels/val</span><span class="w">  </span><span class="c1"># directory for valid labels</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="nt">test</span><span class="p">:</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span><span class="w">  </span><span class="c1"># directory for test images</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span><span class="w">  </span><span class="c1"># directory for test labels</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="nt">pattern</span><span class="p">:</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">  </span><span class="nt">id_mapping</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;prohibitory&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;danger&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;mandatory&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;other&#39;</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># class names</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">  </span><span class="nt">pallete</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span>
+</span></code></pre></div>
+<h2 id="training-with-hugging-face-datasets">Training with Hugging Face datasets<a class="headerlink" href="#training-with-hugging-face-datasets" title="Permanent link">&para;</a></h2>
+<p>NetsPresso Trainer is striving to support various dataset hubs and platforms. 
+As part of that effort and first step, NetsPresso Trainer can be used with data in <a href="https://huggingface.co/datasets">Hugging Face datasets</a>. </p>
+<p>An example configuration for Hugging Face datasets is as follows: </p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">data</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">beans</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">task</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">classification</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">huggingface</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">custom_cache_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data/huggingface</span><span class="w"> </span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">beans</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nt">subset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nt">features</span><span class="p">:</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">image</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">labels</span>
+</span></code></pre></div>
+<h2 id="field-list">Field list<a class="headerlink" href="#field-list" title="Permanent link">&para;</a></h2>
+<h3 id="local-dataset">Local dataset<a class="headerlink" href="#local-dataset" title="Permanent link">&para;</a></h3>
+<h4 id="common">Common<a class="headerlink" href="#common" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>data.name</code> : </li>
+<li><code>data.task</code> : </li>
+<li><code>data.format</code> : </li>
+<li><code>data.path.root</code> : </li>
+<li><code>data.path.train.image</code> : </li>
+<li><code>data.path.train.label</code> : </li>
+<li><code>data.path.valid.image</code> : </li>
+<li><code>data.path.valid.label</code> : </li>
+<li><code>data.path.test.image</code> : </li>
+<li><code>data.path.test.label</code> :</li>
+</ul>
+<h4 id="classification">Classification<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>data.path.id_mapping</code> :</li>
+</ul>
+<h4 id="segmentation">Segmentation<a class="headerlink" href="#segmentation" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>data.path.id_mapping</code> :</li>
+<li><code>data.path.palette</code> :</li>
+</ul>
+<h4 id="detection">Detection<a class="headerlink" href="#detection" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>data.path.id_mapping</code> :</li>
+<li><code>data.path.palette</code> :</li>
+</ul>
+<h3 id="hugging-face-datasets">Hugging Face datasets<a class="headerlink" href="#hugging-face-datasets" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>data.name</code> :</li>
+<li><code>data.task</code> :</li>
+<li><code>data.format</code> :</li>
+<li><code>data.metadata.custom_cache_dir</code> :</li>
+<li><code>data.metadata.repo</code> :</li>
+<li><code>data.metadata.subset</code> :</li>
+<li><code>data.metadata.features.image</code> :</li>
+<li><code>data.metadata.features.label</code> :</li>
+</ul>
 
 
   
@@ -1170,13 +1569,13 @@
         
         
           
-          <a href="../model-list/" class="md-footer__link md-footer__link--next" aria-label="Next: Index" rel="next">
+          <a href="../augmentation/" class="md-footer__link md-footer__link--next" aria-label="Next: Augmentation" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Index
+                Augmentation
               </div>
             </div>
             <div class="md-footer__button md-icon">
