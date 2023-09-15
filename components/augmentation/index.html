@@ -1552,33 +1552,112 @@ In particular, since this simulator directly imports the augmentation modules us
 <p>(HF Spaces demo link)</p>
 <h2 id="field-list">Field list<a class="headerlink" href="#field-list" title="Permanent link">&para;</a></h2>
 <h3 id="common">Common<a class="headerlink" href="#common" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>augmentation.img_size</code> :</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Field <img width=200/></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>augmentation.img_size</code></td>
+<td>(int) the image size of model input after finishing the data augmentation</td>
+</tr>
+</tbody>
+</table>
 <h3 id="resize_1">Resize<a class="headerlink" href="#resize_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>augmentation.crop_size_h</code> :</li>
-<li><code>augmentation.crop_size_w</code> :</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Field <img width=200/></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>augmentation.crop_size_h</code></td>
+<td>(int) the height of cropped image</td>
+</tr>
+<tr>
+<td><code>augmentation.crop_size_w</code></td>
+<td>(int) the width of cropped image</td>
+</tr>
+</tbody>
+</table>
 <h3 id="randomresizedcrop_1">RandomResizedCrop<a class="headerlink" href="#randomresizedcrop_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>augmentation.crop_size_h</code> :</li>
-<li><code>augmentation.crop_size_w</code> :</li>
-<li><code>augmentation.resize_ratio0</code> :</li>
-<li><code>augmentation.resize_ratiof</code> :</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Field <img width=200/></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>augmentation.crop_size_h</code></td>
+<td>(int) the height of cropped image</td>
+</tr>
+<tr>
+<td><code>augmentation.crop_size_w</code></td>
+<td>(int) the width of cropped image</td>
+</tr>
+<tr>
+<td><code>augmentation.resize_ratio0</code></td>
+<td>(float) the minimum scale of random image resizing</td>
+</tr>
+<tr>
+<td><code>augmentation.resize_ratiof</code></td>
+<td>(float) the maximum scale of random image resizing</td>
+</tr>
+</tbody>
+</table>
 <h3 id="randomhorizontalflip_1">RandomHorizontalFlip<a class="headerlink" href="#randomhorizontalflip_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>augmentation.fliplr</code> :</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Field <img width=200/></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>augmentation.fliplr</code></td>
+<td>(float) the probability of the flip. If <code>1.0</code>, it always flips the image.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="colorjitter_1">ColorJitter<a class="headerlink" href="#colorjitter_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>augmentation.color_jitter.brightness</code> :</li>
-<li><code>augmentation.color_jitter.contrast</code> :</li>
-<li><code>augmentation.color_jitter.saturation</code> :</li>
-<li><code>augmentation.color_jitter.hue</code> :</li>
-<li><code>augmentation.color_jitter.colorjitter_p</code> :</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Field <img width=200/></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>augmentation.color_jitter.brightness</code></td>
+<td>(float) the maximum scale of adjusting the brightness of an image. The scale value is selected within range.</td>
+</tr>
+<tr>
+<td><code>augmentation.color_jitter.contrast</code></td>
+<td>(float) the maximum scale of adjusting the contrast of an image. The scale value is selected within range.</td>
+</tr>
+<tr>
+<td><code>augmentation.color_jitter.saturation</code></td>
+<td>(float) the maximum scale of adjusting the saturation of an image. The scale value is selected within range.</td>
+</tr>
+<tr>
+<td><code>augmentation.color_jitter.hue</code></td>
+<td>(float) the maximum scale of adjusting the hue of an image. The scale value is selected within range.</td>
+</tr>
+<tr>
+<td><code>augmentation.color_jitter.colorjitter_p</code></td>
+<td>(float) the probability of applying color jitter. If <code>1.0</code>, it always applies the color transform.</td>
+</tr>
+</tbody>
+</table>
 
 
   

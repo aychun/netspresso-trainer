@@ -1488,43 +1488,152 @@ As part of that effort and first step, NetsPresso Trainer can be used with data 
 <h2 id="field-list">Field list<a class="headerlink" href="#field-list" title="Permanent link">&para;</a></h2>
 <h3 id="local-dataset">Local dataset<a class="headerlink" href="#local-dataset" title="Permanent link">&para;</a></h3>
 <h4 id="common">Common<a class="headerlink" href="#common" title="Permanent link">&para;</a></h4>
-<ul>
-<li><code>data.name</code> : </li>
-<li><code>data.task</code> : </li>
-<li><code>data.format</code> : </li>
-<li><code>data.path.root</code> : </li>
-<li><code>data.path.train.image</code> : </li>
-<li><code>data.path.train.label</code> : </li>
-<li><code>data.path.valid.image</code> : </li>
-<li><code>data.path.valid.label</code> : </li>
-<li><code>data.path.test.image</code> : </li>
-<li><code>data.path.test.label</code> :</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Field <img width=200/></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data.name</code></td>
+<td>(str) the name of dataset</td>
+</tr>
+<tr>
+<td><code>data.task</code></td>
+<td>(str) <code>classification</code> for image classification, <code>segmentation</code> for semantic segmentation, and <code>detection</code> for object detection</td>
+</tr>
+<tr>
+<td><code>data.format</code></td>
+<td><strong><code>local</code></strong> as an identifier of dataset format</td>
+</tr>
+<tr>
+<td><code>data.path.root</code></td>
+<td>(str) root directory of dataset</td>
+</tr>
+<tr>
+<td><code>data.path.train.image</code></td>
+<td>(str) training image directory. Should be <strong>relative</strong> path to root directory.</td>
+</tr>
+<tr>
+<td><code>data.path.train.label</code></td>
+<td>(str) training label directory. Should be <strong>relative</strong> path to root directory.</td>
+</tr>
+<tr>
+<td><code>data.path.valid.image</code></td>
+<td>(str) validation image directory. Should be <strong>relative</strong> path to root directory.</td>
+</tr>
+<tr>
+<td><code>data.path.valid.label</code></td>
+<td>(str) validation label directory. Should be <strong>relative</strong> path to root directory.</td>
+</tr>
+<tr>
+<td><code>data.path.test.image</code></td>
+<td>(str) image directory for test dataset. Should be <strong>relative</strong> path to root directory.</td>
+</tr>
+<tr>
+<td><code>data.path.test.label</code></td>
+<td>(str) image directory for test dataset. Should be <strong>relative</strong> path to root directory.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="classification">Classification<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h4>
-<ul>
-<li><code>data.path.id_mapping</code> :</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Field <img width=200/></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data.path.id_mapping</code></td>
+<td>(dict) key-value pair between directory name and class name. Should be a list of (<strong>dirname: classname</strong>).</td>
+</tr>
+</tbody>
+</table>
 <h4 id="segmentation">Segmentation<a class="headerlink" href="#segmentation" title="Permanent link">&para;</a></h4>
-<ul>
-<li><code>data.path.id_mapping</code> :</li>
-<li><code>data.path.palette</code> :</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Field <img width=200/></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data.path.id_mapping</code></td>
+<td>(dict) key-value pair between pixel value (RGB or image type) and class name. Should be a list of (<strong>(R, G, B): classname</strong>).</td>
+</tr>
+<tr>
+<td><code>data.path.palette</code></td>
+<td>(dict) Color mapping for visualization. If <code>none</code>, automatically select the color for each class.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="detection">Detection<a class="headerlink" href="#detection" title="Permanent link">&para;</a></h4>
-<ul>
-<li><code>data.path.id_mapping</code> :</li>
-<li><code>data.path.palette</code> :</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Field <img width=200/></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data.path.id_mapping</code></td>
+<td>(list) class list for each class index</td>
+</tr>
+<tr>
+<td><code>data.path.palette</code></td>
+<td>(dict) Color mapping for visualization. If <code>none</code>, automatically select the color for each class.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="hugging-face-datasets">Hugging Face datasets<a class="headerlink" href="#hugging-face-datasets" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>data.name</code> :</li>
-<li><code>data.task</code> :</li>
-<li><code>data.format</code> :</li>
-<li><code>data.metadata.custom_cache_dir</code> :</li>
-<li><code>data.metadata.repo</code> :</li>
-<li><code>data.metadata.subset</code> :</li>
-<li><code>data.metadata.features.image</code> :</li>
-<li><code>data.metadata.features.label</code> :</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Field <img width=200/></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data.name</code></td>
+<td>(str) the name of dataset</td>
+</tr>
+<tr>
+<td><code>data.task</code></td>
+<td>(str) <code>classification</code> for image classification, <code>segmentation</code> for semantic segmentation, and <code>detection</code> for object detection</td>
+</tr>
+<tr>
+<td><code>data.format</code></td>
+<td><strong><code>huggingface</code></strong> as an identifier of dataset format</td>
+</tr>
+<tr>
+<td><code>data.metadata.custom_cache_dir</code></td>
+<td>(str) cache directory to load and save dataset files from Hugging Face</td>
+</tr>
+<tr>
+<td><code>data.metadata.repo</code></td>
+<td>(str) Repository name. (e.g. <code>competitions/aiornot</code> represents the dataset <code>huggingface.co/datasets/competitions/aiornot</code>.)</td>
+</tr>
+<tr>
+<td><code>data.metadata.subset</code></td>
+<td>(str, optional) subset name if the dataset contains multiple versions</td>
+</tr>
+<tr>
+<td><code>data.metadata.features.image</code></td>
+<td>(str) key which represents the image at the dataset header</td>
+</tr>
+<tr>
+<td><code>data.metadata.features.label</code></td>
+<td>(str) key which represents the label at the dataset header</td>
+</tr>
+</tbody>
+</table>
 
 
   

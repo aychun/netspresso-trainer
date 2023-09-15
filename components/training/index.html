@@ -1337,18 +1337,19 @@ Adjust the values according to your server specifications, but for successful tr
 <p>NetsPresso Trainer uses the optimizers implemented in PyTorch as is. By selecting an optimizer suitable for the training recipe, including batch size, you can configure the optimal training.</p>
 <h3 id="supporting-optimizers">Supporting optimizers<a class="headerlink" href="#supporting-optimizers" title="Permanent link">&para;</a></h3>
 <ul>
-<li>AdamW</li>
-<li>Adam</li>
-<li>Adadelta</li>
-<li>Adagrad</li>
-<li>RMSprop</li>
-<li>Adamax</li>
-<li>SGD</li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html">AdamW</a> (<code>adamw</code>)</li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.optim.Adam.html">Adam</a> (<code>adam</code>)</li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.optim.Adadelta.html">Adadelta</a> (<code>adadelta</code>)</li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.optim.Adagrad.html">Adagrad</a> (<code>adagrad</code>)</li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.optim.RMSprop.html">RMSprop</a> (<code>rmsprop</code>)</li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.optim.Adamax.html">Adamax</a> (<code>adamax</code>)</li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.optim.SGD.html">SGD</a> (<code>sgd</code>)</li>
 </ul>
 <p>If you are unsure which optimizer to use, we recommend reading the <a href="https://towardsdatascience.com/7-tips-to-choose-the-best-optimizer-47bb9c1219e">blog post from <em>towardsdatascience</em></a>.</p>
 <h2 id="learning-rate-scheduler">Learning rate scheduler<a class="headerlink" href="#learning-rate-scheduler" title="Permanent link">&para;</a></h2>
 <p>NetsPresso Trainer supports various learning rate schedulers based on PyTorch.
-In particular, warm-up is supported for frequently used learning rate schedulers, and warm restart is supported for some schedulers, such as cosine annealing.</p>
+In particular, warm-up is supported for frequently used learning rate schedulers, and warm restart is supported for some schedulers, such as cosine annealing.
+NetsPresso Trainer updates the learning rate at the end of epoch, not the end of step, so users will set the scheduler with epoch-level counts.</p>
 <h3 id="supporting-schedulers">Supporting schedulers<a class="headerlink" href="#supporting-schedulers" title="Permanent link">&para;</a></h3>
 <h2 id="gradio-demo-for-simulating-the-learning-rate-scheduler">Gradio demo for simulating the learning rate scheduler<a class="headerlink" href="#gradio-demo-for-simulating-the-learning-rate-scheduler" title="Permanent link">&para;</a></h2>
 <p>In many training feature repositories, it is recommended to perform the entire training pipeline and check the log to see how the learning rate scheduler works.
@@ -1362,21 +1363,68 @@ By copying the training configuration into the simulator, users can see how the 
 <h4 id="hugging-face-spaces">Hugging Face Spaces<a class="headerlink" href="#hugging-face-spaces" title="Permanent link">&para;</a></h4>
 <p>(HF Spaces demo link)</p>
 <h2 id="field-list">Field list<a class="headerlink" href="#field-list" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>training.seed</code> : </li>
-<li><code>training.opt</code> : </li>
-<li><code>training.lr</code> : </li>
-<li><code>training.momentum</code> : </li>
-<li><code>training.weight_decay</code> : </li>
-<li><code>training.sched</code> : </li>
-<li><code>training.min_lr</code> : </li>
-<li><code>training.warmup_bias_lr</code> : </li>
-<li><code>training.warmup_epochs</code> : </li>
-<li><code>training.iters_per_phase</code> : </li>
-<li><code>training.sched_power</code> : </li>
-<li><code>training.epochs</code> : </li>
-<li><code>training.batch_size</code> : </li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Field <img width=200/></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>training.seed</code></td>
+<td>(int) random seed</td>
+</tr>
+<tr>
+<td><code>training.opt</code></td>
+<td>(str) the type of optimizer. Please check <a href="#supporting-optimizers">the list of supporting optimizer</a> for more details.</td>
+</tr>
+<tr>
+<td><code>training.lr</code></td>
+<td>(float) base learning rate</td>
+</tr>
+<tr>
+<td><code>training.momentum</code></td>
+<td>(float) momentum value for optimizer</td>
+</tr>
+<tr>
+<td><code>training.weight_decay</code></td>
+<td>(float) the strength of L2 penalty</td>
+</tr>
+<tr>
+<td><code>training.sched</code></td>
+<td>(str) the type of scheduler. Please check <a href="#supporting-schedulers">the list of supporting LR schedulers</a> for more details.</td>
+</tr>
+<tr>
+<td><code>training.min_lr</code></td>
+<td>(float) the minimum value of learning rate</td>
+</tr>
+<tr>
+<td><code>training.warmup_bias_lr</code></td>
+<td>(float) the starting learning rate of warmup period in learning rate scheduling</td>
+</tr>
+<tr>
+<td><code>training.warmup_epochs</code></td>
+<td>(int) the warmup period</td>
+</tr>
+<tr>
+<td><code>training.iters_per_phase</code></td>
+<td>(int) the period of base phase in learning rate scheduling. Applied when the scheduler is <code>step</code> or <code>cosine</code>.</td>
+</tr>
+<tr>
+<td><code>training.sched_power</code></td>
+<td>(float) the power value of polynomial scheduler. Applied when the scheduler is <code>poly</code>.</td>
+</tr>
+<tr>
+<td><code>training.epochs</code></td>
+<td>(int) the total number of epoch for training the model</td>
+</tr>
+<tr>
+<td><code>training.batch_size</code></td>
+<td>(int) the number of samples in single batch input</td>
+</tr>
+</tbody>
+</table>
 
 
   
