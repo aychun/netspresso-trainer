@@ -17,9 +17,7 @@ def train_with_inline_yaml():
 
 
 if __name__ == '__main__':
-    logging_dir = train_cli()
 
-    # With inline yaml
-    # logging_dir = train_with_inline_yaml()
+    logging_dir = train_with_inline_yaml()
     
     print(f"Training results are saved at: {logging_dir}")

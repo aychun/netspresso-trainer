@@ -1,6 +1,6 @@
 training:
-  epochs: 30
-  ema: ~
+  epochs: 250
+  batch_size: 8 
   optimizer:
     name: adamw
     lr: 6e-5
@@ -10,5 +10,4 @@ training:
     name: cosine_no_sgdr
     warmup_epochs: 5
     warmup_bias_lr: 1e-5
-    min_lr: 0.00001
-    end_epoch: 25
+    min_lr: 0.
