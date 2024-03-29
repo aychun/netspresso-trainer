@@ -7,3 +7,4 @@ from .experimental.mixtransformer import mixtransformer
 from .experimental.mobilenetv3 import mobilenetv3
 from .experimental.mobilevit import mobilevit
 from .experimental.vit import vit
+from .experimental.darknet import darknet53

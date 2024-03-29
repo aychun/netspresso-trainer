@@ -128,6 +128,8 @@ def set_arguments(
 
     conf_data = OmegaConf.load(data)
     conf_augmentation = OmegaConf.load(augmentation)
+    print("######## conf_aug in set_arg")
+    print(conf_augmentation)
     conf_model = OmegaConf.load(model)
     if training:
         conf_training = OmegaConf.load(training)

@@ -188,8 +188,17 @@ class BasePipeline(ABC):
                 self.loss_factory.reset_values()
                 self.metric_factory.reset_values()
                 self.cur_epoch.value = num_epoch
+                
+
+                # logger.info("before calling train_one_epoch")
+                # logger.info(f"memory_reserved: {torch.cuda.memory_reserved(0)}")
+                # logger.info(f"torch.cuda.memory_allocated(): {torch.cuda.memory_allocated(0)}")
 
                 self.train_one_epoch(epoch=num_epoch)
+
+                # logger.info("after calling train_one_epoch")
+                # logger.info(f"memory_reserved: {torch.cuda.memory_reserved(0)}")
+                # logger.info(f"torch.cuda.memory_allocated(): {torch.cuda.memory_allocated(0)}")
 
                 with_valid_logging = self.epoch_with_valid_logging(num_epoch)
                 with_checkpoint_saving = self.epoch_with_checkpoint_saving(num_epoch)
