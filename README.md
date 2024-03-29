@@ -86,13 +86,13 @@ pip install netspresso_trainer
 ### Install with GitHub
 
 ```bash
-pip install git+https://github.com:Nota-NetsPresso/netspresso-trainer.git@stable
+pip install git+https://github.com/Nota-NetsPresso/netspresso-trainer.git@v0.1.2
 ```
 
 To install with editable mode,
 
 ```bash
-git clone https://github.com:Nota-NetsPresso/netspresso-trainer.git .
+git clone https://github.com/Nota-NetsPresso/netspresso-trainer.git .
 pip install -e netspresso-trainer
 ```
 
