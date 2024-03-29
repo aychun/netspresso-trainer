@@ -71,6 +71,10 @@ def train_with_yaml_impl(gpus: Optional[Union[List, int]], data: Union[Path, str
                          environment=environment)
     config_summary = validate_train_config(conf)
 
+
+    print("!!!!!!!!!!!!!!!")
+    print("will this be printed?")
+
     try:
         if isinstance(gpus, int):
             train_common(

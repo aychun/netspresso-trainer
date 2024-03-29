@@ -31,7 +31,25 @@ def generate_edge(label: np.ndarray) -> Image.Image:
 
 
 def transforms_check(transforms):
-    names = [t.name.lower() for t in transforms]
+    print("######## TRASNFORMS")
+    print(transforms)
+
+    ts = transforms.values()
+    print(ts)
+    for t in ts:
+        print("printing t")
+        print(type(t))
+        print(t)
+    print("-------------------------------")
+
+    names = []
+
+    for t in ts:
+        for a in t:
+            names.append(a['name'])
+    # names = [t['name'].lower() for t in ts]
+    print(names)
+    print("!@#!@#@#$!@#@#$@#$@#$@#")
     if 'mixing' in names:
         if names[-1] == 'mixing':
             return transforms[:-1]
@@ -42,13 +60,16 @@ def transforms_check(transforms):
 
 def transforms_custom(conf_augmentation, training):
     assert conf_augmentation.img_size > 32
+    print("#########3 conf_aug, phase_conf")
+    print(conf_augmentation)
     phase_conf = conf_augmentation.train if training else conf_augmentation.inference
+    print(phase_conf)
 
     preprocess = []
     if phase_conf:
         checked_transforms = transforms_check(phase_conf)
         for augment in checked_transforms:
-            name = augment.name.lower()
+            name = augment['name'].lower()
             augment_kwargs = list(augment.keys())
             augment_kwargs.remove('name')
             augment_kwargs = {k:augment[k] for k in augment_kwargs}
