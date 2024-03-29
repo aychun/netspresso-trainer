@@ -8,13 +8,15 @@
 - Add transform: HSVJitter by `@illian01` in [PR 336](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/336)
 - Add transforms: RandomResize by `@illian01` in [PR 341](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/341), [PR 344](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/344)
 - Add model EMA (Exponential Moving Average) by `@illian01` in [PR 348](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/348)
-- Add entry point for evaluation by `@illian01` in [PR 374](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/374)
+- Add entry point for evaluation and inference by `@illian01` in [PR 374](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/374), [PR 379](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/379), [PR 381](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/381), [PR 383](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/383)
+- Add classification visulizer by `@illian01` in [PR 384](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/384)
 
 ## Bug Fixes:
 
 - Fix output_root_dir from fixed string to config value by `@illian01` in [PR 323](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/323)
 - Gather predicted results before compute metric and fix additional distributed evaluation inaccurate error by `@illian01` in [PR 346](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/346), [PR 356](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/356)
 - Fix detection score return by `@illian01` in [PR 373](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/373)
+- Fix memory leak from onnx export by `@illian01` in [PR 386](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/386)
 
 ## Breaking Changes:
 
@@ -35,6 +37,8 @@
 - Backbone task compatibility checking refactoring by `@illian01` in [PR 361](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/361), [PR 364](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/364)
 - Fix postprocessor return type as numpy.ndarray by `@illian01` in [PR 365](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/365)
 - Update default asignees of issue template by `@illian01` in [PR 375](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/375)
+- Refactoring: Remove CSV logger, change logger module input format by `@illian01` in [PR 377](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/377)
+- Change ClassficationDataSampler logic by `@illian01` in [PR 382](https://github.com/Nota-NetsPresso/netspresso-trainer/pull/382)
 
 # v0.1.2
 

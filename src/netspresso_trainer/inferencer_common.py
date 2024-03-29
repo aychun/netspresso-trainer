@@ -13,14 +13,17 @@ from .utils.environment import set_device
 from .utils.logger import add_file_handler, set_logger
 
 
-def train_common(
+def inference_common(
     conf: DictConfig,
     task: str,
     model_name: str,
-    is_graphmodule_training: bool,
     logging_dir: Path,
     log_level: Literal['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'] = 'INFO'
 ):
+    # TODO: Supports all tasks
+    inference_supports = ['classification', 'detection', 'segmentation']
+    assert task in inference_supports, f"Sorry. Inference mode only supports {inference_supports}"
+
     distributed, world_size, rank, devices = set_device(conf.environment.seed)
     logger = set_logger(level=log_level, distributed=distributed)
 
@@ -32,7 +35,7 @@ def train_common(
     add_file_handler(logging_dir / "result.log", distributed=conf.distributed)
 
     if not distributed or dist.get_rank() == 0:
-        logger.info(f"Task: {task} | Model: {model_name} | Training with torch.fx model? {is_graphmodule_training}")
+        logger.info(f"Task: {task} | Model: {model_name}")
         logger.info(f"Result will be saved at {logging_dir}")
 
     if conf.distributed and conf.rank != 0:
@@ -41,54 +44,47 @@ def train_common(
     single_task_model = is_single_task_model(conf.model)
     conf.model.single_task_model = single_task_model
 
-    # Build dataloaders
-    train_dataset, valid_dataset, _ = build_dataset(conf.data, conf.augmentation, task, model_name, distributed=distributed)
-    assert train_dataset is not None, "For training, train split of dataset must be provided."
+    # Build dataloader
+    _, _, test_dataset = build_dataset(conf.data, conf.augmentation, task, model_name, distributed=distributed)
+    assert test_dataset is not None, "For inference, test split of dataset must be provided."
     if not distributed or dist.get_rank() == 0:
         logger.info(f"Summary | Dataset: <{conf.data.name}> (with {conf.data.format} format)")
-        logger.info(f"Summary | Training dataset: {len(train_dataset)} sample(s)")
-        if valid_dataset is not None:
-            logger.info(f"Summary | Validation dataset: {len(valid_dataset)} sample(s)")
+        logger.info(f"Summary | Test dataset: {len(test_dataset)} sample(s)")
 
     if conf.distributed and conf.rank == 0:
         torch.distributed.barrier()
 
-    train_dataloader = build_dataloader(conf, task, model_name, dataset=train_dataset, phase='train')
-    eval_dataloader = build_dataloader(conf, task, model_name, dataset=valid_dataset, phase='val')
+    test_dataloader = build_dataloader(conf, task, model_name, dataset=test_dataset, phase='val')
 
     # Build model
-    if is_graphmodule_training:
-        assert conf.model.checkpoint.fx_model_path is not None
-        assert Path(conf.model.checkpoint.fx_model_path).exists()
-        model = torch.load(conf.model.checkpoint.fx_model_path)
-    else:
-        model = build_model(
-            conf.model, task, train_dataset.num_classes,
-            model_checkpoint=conf.model.checkpoint.path,
-            use_pretrained=conf.model.checkpoint.use_pretrained,
-            img_size=conf.augmentation.img_size
-        )
+    # TODO: Not implemented for various model types. Only support pytorch model now
+    model = build_model(
+        conf.model, task, test_dataset.num_classes,
+        model_checkpoint=conf.model.checkpoint.path,
+        use_pretrained=conf.model.checkpoint.use_pretrained,
+        img_size=conf.augmentation.img_size
+    )
 
     model = model.to(device=devices)
     if conf.distributed:
         model = DDP(model, device_ids=[devices], find_unused_parameters=True)  # TODO: find_unused_parameters should be false (for now, PIDNet has problem)
 
-    # Build training pipeline
-    pipeline_type = 'train'
+    # Build evaluation pipeline
+    pipeline_type = 'inference'
     pipeline = build_pipeline(pipeline_type=pipeline_type,
                               conf=conf,
                               task=task,
                               model_name=model_name,
                               model=model,
                               devices=devices,
-                              class_map=train_dataset.class_map,
+                              class_map=test_dataset.class_map,
                               logging_dir=logging_dir,
-                              is_graphmodule_training=is_graphmodule_training,
-                              dataloaders={'train': train_dataloader, 'valid': eval_dataloader},)
+                              is_graphmodule_training=None, # TODO: Remove is_graphmodule_training ...
+                              dataloaders={'test': test_dataloader})
 
     try:
-        # Start train
-        pipeline.train()
+        # Start inference
+        pipeline.inference()
 
     except KeyboardInterrupt:
         pass
