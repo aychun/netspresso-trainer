@@ -2,7 +2,7 @@
 
 Netspresso Trainer provides a variety of backbones and heads, allowing flexible combinations. Users can choose appropriate backbones and heads based on their dataset and task requirements. The models can be optimized for on-device environments using Netspresso's compression and converting services.
 
-We provide a configuration format which can easily construct backbones and heads to meet user requirements. As composed in the example of the ResNet50 model below, backbones and heads are structured as separate fields, and then connected. Also, Users can freely choose suitable loss modules suitable for the head and task. The range of supported models and the detailed configuration definitions for each model are extensively described in the separated [Models page](../../../models/overview).
+We provide a configuration format which can easily construct backbones and heads to meet user requirements. As composed in the example of the ResNet50 model below, backbones and heads are structured as separate fields, and then connected. Also, Users can freely choose suitable loss modules suitable for the head and task. The range of supported models and the detailed configuration definitions for each model are extensively described in the separated [Models page](../../models/overview.md).
 
 ```yaml
 model:
@@ -62,5 +62,5 @@ model:
 | `model.checkpoint.optimizer_path` | (str) Optimizer checkpoint path for resuming training. |
 | `model.checkpoint.fx_model_path` | (str) Model path for fx model retraining. If you have to train the model from NP Compressor, you have to fill your compressed model path at this field. If `fx_model_path` is filled, `use_pretrained`, `load_head`, `path`, `optimizer_path`, and `freeze_backbone` are ignored. |
 | `model.freeze_backbone` | (bool) Whether to freeze backbone in training. |
-| `model.architecture` | (dict) Detailed configuration of the model architecture. Please see [Model page](../../../models/overview) to find NetsPresso supporting models. |
-| `model.losses` | (list) List of losses that model to learn. Please see [Losses page](../losses/) to find NetsPresso supporting loss modules. |
+| `model.architecture` | (dict) Detailed configuration of the model architecture. Please see [Model page](../../models/overview.md) to find NetsPresso supporting models. |
+| `model.losses` | (list) List of losses that model to learn. Please see [Losses page](../model/losses.md) to find NetsPresso supporting loss modules. |
