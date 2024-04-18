@@ -91,19 +91,24 @@ model:
         act_type: relu6
     head:
       # name: anchor_decoupled_head
-      name: yolo-fast
+      name: yolo-fast-head
       params:
-        anchor_sizes: [[32,], [64,], [128,], [256,]]
-        aspect_ratios: [0.5, 1.0, 2.0]
-        num_layers: 1
+        anchors:
+          - [12,18, 37,49, 52,132]  # P4/16
+          - [115,73, 119,199, 242,238]  # P5/32]
+        strides: [16, 32]
+        in_channels: [128, 96]        # parallel # TODO: intermidiate feature dim .. 
+        out_channels: [33, 33]
+        # aspect_ratios: [0.5, 1.0, 2.0]
+        num_layers: 2
         norm_type: batch_norm
-        # postprocessor - decode
         topk_candidates: 1000
-        score_thresh: 0.05
+        score_thresh: 0.0
         # postprocessor - nms
         nms_thresh: 0.45
         class_agnostic: False
   losses:
-    - criterion: yolox_loss
-      weight: ~
-      l1_activate_epoch: 1
+      - criterion: yolo_fastest_loss
+        # cls_weight: 1.0
+        # obj_weight: 1.0
+        weight: 1.0
