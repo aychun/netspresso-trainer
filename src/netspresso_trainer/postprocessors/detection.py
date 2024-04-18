@@ -1,4 +1,5 @@
 from functools import partial
+from typing import Iterable
 
 import torch
 import torch.nn.functional as F
@@ -118,6 +119,45 @@ def anchor_free_decoupled_head_decode(pred, original_shape, score_thresh=0.7):
     return detections
 
 
+def yolo_fastest_decode(prediction: Iterable[torch.Tensor], original_shape, conf_model):
+    """
+    Args:
+
+        prediction: List of tensors of shape [batch_size, channels, height, width]
+        -- Raw output from the head 
+
+
+        prediction: List of tensors of shape [batch_size, num_anchors, num_classes + 5]
+        original_shape: List of tuples of shape (height, width)
+        conf_model: DictConfig of the model configuration 
+    """
+
+    num_layers = conf_model.architecture.head.params.num_layers
+    stride = (32, 16)          # TODO: embed this in the config
+    anchors = conf_model.architecture.head.params.anchors
+    num_anchors = len(anchors[0]) // 2
+    num_classes = 6
+
+
+    grid = []
+    anchor_grid = []
+    training = False
+    onnx_dynamic = False
+    num_preds = len(prediction)
+
+    outs = []  # inference output
+    for i in range(num_preds):
+
+        batch_size, channels, height, width = prediction[i].shape
+
+        print("#########")
+        print("Batch size: ", batch_size)
+        print("Channels: ", channels)
+        print("Height: ", height)
+        print("Width: ", width)
+        exit()
+
+
 def nms(prediction, nms_thresh=0.45, class_agnostic=False):
     output = [torch.zeros(0, 7).to(prediction[0].device) for i in range(len(prediction))]
     for i, image_pred in enumerate(prediction):
@@ -156,6 +196,15 @@ class DetectionPostprocessor:
         elif head_name == 'anchor_decoupled_head':
             self.decode_outputs = partial(anchor_decoupled_head_decode, topk_candidates=params.topk_candidates, score_thresh=params.score_thresh)
             self.postprocess = partial(nms, nms_thresh=params.nms_thresh, class_agnostic=params.class_agnostic)
+
+        elif head_name == 'yolo_fastest_head':
+            # TODO: IMPLEMENT
+            self.decode_outputs = yolo_fastest_decode
+            self.decode_outputs = partial(yolo_fastest_decode, conf_model=conf_model)
+            self.postprocess = partial(nms, nms_thresh=params.nms_thresh, class_agnostic=params.class_agnostic)
+            pass
+            # self.decode_outputs = yolo_fastest_detect
+            # self.postprocess = None
         else:
             self.decode_outputs = None
             self.postprocess = None
@@ -172,3 +221,9 @@ class DetectionPostprocessor:
                       p[:, 6].to(torch.int).detach().cpu().numpy())
                       for p in pred]
         return pred
+
+
+
+if __name__ == '__main__':
+    yolo_fastest_decode([1,2,3])
+    

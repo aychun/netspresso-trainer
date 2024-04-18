@@ -40,7 +40,7 @@ MODEL_HEAD_DICT: Dict[str, Callable[..., nn.Module]] = {
     'detection': {
         'anchor_free_decoupled_head': anchor_free_decoupled_head,
         'anchor_decoupled_head': anchor_decoupled_head,
-        'yolo-fast-head': yolo_fastest_head
+        'yolo_fastest_head': yolo_fastest_head
     },
     'pose_estimation': {
         'rtmcc': rtmcc,

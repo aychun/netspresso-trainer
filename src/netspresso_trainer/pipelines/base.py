@@ -96,6 +96,8 @@ class BasePipeline(ABC):
         self.loss_factory = build_losses(self.conf.model, ignore_index=self.ignore_index)
         self.metric_factory = build_metrics(self.task, self.conf.model, ignore_index=self.ignore_index, num_classes=self.num_classes)
         self.postprocessor = build_postprocessor(self.task, self.conf.model)
+        if self.postprocessor is None:
+            logger.error(f"Postprocessor was not built! Please check the configuration.")
         resume_optimizer_checkpoint = self.conf.model.checkpoint.optimizer_path
         if resume_optimizer_checkpoint is not None:
             resume_optimizer_checkpoint = Path(resume_optimizer_checkpoint)
