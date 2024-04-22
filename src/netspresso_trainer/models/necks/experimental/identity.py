@@ -17,7 +17,7 @@ class Identity(nn.Module):
     ):
         super(Identity, self).__init__()
 
-        self._intermediate_features_dim = intermediate_features_dim
+        self._intermediate_features_dim = (128, 96)
 
     def forward(self, inputs):
 

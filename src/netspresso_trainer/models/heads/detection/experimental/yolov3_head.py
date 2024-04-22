@@ -10,15 +10,6 @@ from omegaconf import DictConfig
 import torch
 import torch.nn as nn
 
-# from pathlib import Path
-# import sys
-# # parents = Path(__file__).resolve().parents
-# # for p in parents:
-#     # print(p)
-
-# sys.path.append(str(Path(__file__).resolve().parents[6]))
-# print(sys.path)
-
 
 from ....op.custom import ConvLayer
 from ....utils import AnchorBasedDetectionModelOutput
@@ -35,14 +26,8 @@ class YoloFastestHead(nn.Module):
         params: DictConfig,
     ):
         super().__init__()
-        # assert len(set(intermediate_features_dim)) == 1, "Feature dimensions of all stages have to same."
-        in_channels = intermediate_features_dim[0]
 
-        assert params.num_layers == len(
-            params.in_channels
-        ), "Number of layers and in_channels should be the same."
-
-        # params = head.params
+    
 
         anchors = params.anchors
         num_anchors = len(anchors[0]) // 2
@@ -55,8 +40,11 @@ class YoloFastestHead(nn.Module):
         kernel_size = 1
 
         for i in range(num_layers):
-            in_channels = params.in_channels[i]
+            # in_channels = params.in_channels[i]
+
+            in_channels = intermediate_features_dim[i]
             out_channels = params.out_channels[i]
+
 
             conv_norm = ConvLayer(
                 in_channels=in_channels,
@@ -88,20 +76,14 @@ class YoloFastestHead(nn.Module):
 
         self.apply(init_bn)
 
+        # print model
+
+        print(" model head")
+        print(self.layer_1)
+        print(self.layer_2)
+        exit()
 
 
-        # TODO: Temporarily use hard-coded img_size
-        self.anchor_generator = AnchorGenerator(
-            params.anchors, aspect_ratios=[1.0], image_size=(480, 480)
-        )
-        # num_anchors = self.anchor_generator.num_anchors_per_location()[0]
-
-        # self.classification_head = RetinaNetClassificationHead(
-        #     in_channels, num_anchors, num_classes, num_layers, norm_layer=norm_layer
-        # )
-        # self.regression_head = RetinaNetRegressionHead(in_channels, num_anchors, num_layers, norm_layer=norm_layer)
-
-        # self.anchor_generator = AnchorGenerator(anchors, num_anchors, num_layers)
 
     def forward(self, inputs: List[torch.Tensor]):
         # anchors = torch.cat(self.anchor_generator(x), dim=0)
@@ -131,22 +113,3 @@ def yolo_fastest_head(
         intermediate_features_dim=intermediate_features_dim,
         params=conf_model_head.params,
     )
-
-
-# from omegaconf import OmegaConf
-
-# config = OmegaConf.load("config/model/yolo-fastest/yolo-fastest.yaml")
-# cfg = config.model.architecture.head
-# head = yolo_fastest_head(80, [256, 256], cfg)
-# print(head)
-
-
-# if __name__ == "__main__":
-#     from omegaconf import OmegaConf
-#     import sys
-#     sys.path.append("../../../../../")
-#     print(sys.path)
-
-#     config = OmegaConf.load("config/model/yolo-fastest/yolo-fastest.yaml")
-#     head = yolo_fastest_head(80, [256, 256], config.model.head)
-#     print(head)
