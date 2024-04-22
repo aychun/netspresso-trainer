@@ -12,8 +12,9 @@ from .detection import AnchorGenerator
 
 
 class YoloFastestHead(nn.Module):
-    
+
     num_layers: int
+
     def __init__(
         self,
         num_classes: int,
@@ -22,7 +23,6 @@ class YoloFastestHead(nn.Module):
     ):
         super().__init__()
 
-    
         anchors = params.anchors
         num_anchors = len(anchors[0]) // 2
         num_layers = len(anchors)
@@ -33,7 +33,6 @@ class YoloFastestHead(nn.Module):
         norm_type = params.norm_type
         use_act = False
         kernel_size = 1
-
 
         for i in range(num_layers):
 
@@ -58,7 +57,6 @@ class YoloFastestHead(nn.Module):
 
             setattr(self, f"layer_{i+1}", layer)
 
-
         def init_bn(M):
             for m in M.modules():
 
@@ -67,7 +65,6 @@ class YoloFastestHead(nn.Module):
                     m.momentum = 0.03
 
         self.apply(init_bn)
-
 
     def forward(self, inputs: List[torch.Tensor]):
 
