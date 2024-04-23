@@ -34,3 +34,6 @@ docker-compose.yml
 
 !data/.gitkeep
 !weights/.gitkeep
+
+*.jpg
+*.txt
