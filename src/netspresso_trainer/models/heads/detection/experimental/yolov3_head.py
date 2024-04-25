@@ -23,6 +23,9 @@ class YoloFastestHead(nn.Module):
     ):
         super().__init__()
 
+
+        # TODO: assert intermediate_features == len(anchors)
+
         anchors = params.anchors
         num_anchors = len(anchors[0]) // 2
         num_layers = len(anchors)
@@ -38,6 +41,8 @@ class YoloFastestHead(nn.Module):
 
             in_channels = intermediate_features_dim[i]
 
+
+            # TODO remove this
             conv_norm = ConvLayer(
                 in_channels=in_channels,
                 out_channels=in_channels,
@@ -68,11 +73,15 @@ class YoloFastestHead(nn.Module):
 
     def forward(self, inputs: List[torch.Tensor]):
 
-        x1, x2 = inputs
-        out1 = self.layer_1(x1)
-        out2 = self.layer_2(x2)
+        assert len(inputs) == self.num_layers, "Number of inputs should be equal to number of layers"
 
-        return out1, out2
+        outs = []
+        for i, x in enumerate(inputs):
+            layer = getattr(self, f"layer_{i+1}")
+            out = layer(x)
+            outs.append(out)
+
+        return outs
 
 
 def yolo_fastest_head(
